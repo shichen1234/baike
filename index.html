@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态百科</title>
+    <style>
+        .search-box {
+            position: absolute;
+            top: 30px;  /* 距离顶部 */
+            right: 40px; /* 距离右侧 */
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 15px;
+            border-radius: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            transition: box-shadow 0.3s;
+            z-index: 10;
+        }
+
+        .search-box:hover {
+            box-shadow: 0 4px 15px rgba(0, 86, 179, 0.15);
+        }
+
+        .search-box input {
+            border: none;
+            background: transparent;
+            outline: none;
+            font-size: 14px;
+            color: #555;
+            width: 160px;
+            padding-right: 10px;
+        }
+
+        .search-box button {
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            color: #0056b3;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .search-box button img {
+            width: 16px;
+            height: 16px;
+            margin: 0 auto;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('图片/背景.png');
+            background-color: #f0f2f5;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+            line-height: 1.5;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px 40px;
+        }
+
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        h1.logo {
+            font-size: 48px;
+            color: #0056b3;
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1); 
+        }
+
+        p.slogan {
+            color: #555; 
+            font-size: 14px;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #555;
+            font-size: 16px;
+            padding-bottom: 5px;
+            transition: all 0.3s;
+        }
+
+        nav a.active {
+            color: #0056b3;
+            font-weight: bold;
+            border-bottom: 2px solid #0056b3;
+        }
+
+        nav a:hover {
+            color: #0056b3;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 24px;
+            padding-bottom: 60px;
+        }
+
+        @media (max-width: 1200px) {
+            .grid-container { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 900px) {
+            .grid-container { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .grid-container { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex; 
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,50,150,0.15);
+        }
+
+        .card-thumb {
+            position: relative;
+            width: 100%;
+            height: 160px;
+            background-color: #eee;
+        }
+
+        .card-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .card:hover .card-thumb img {
+            transform: scale(1.05);
+        }
+
+        .category-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 86, 179, 0.85);
+            color: #fff;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            font-weight: 600;
+        }
+        .card p {
+            padding: 16px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: left; 
+            line-height: 1.4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            flex-grow: 1; 
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="search-box">
+        <input type="text" placeholder="搜索关键词...">
+        <button><img src="图片/搜索.png"></button>
+    </div>
+    <header>
+        <h1 class="logo">动态百科</h1>
+        <p class="slogan">-- 万物皆可交互，真理触手可及 --</p>
+    </header>
+
+    <nav>
+        <a href="index.html" class="active">推荐</a>
+        <a href="自然科学.html">自然科学</a>
+        <a href="定理定律.html">定理定律</a>
+        <a href="人文艺术.html">人文艺术</a>
+        <a href="生活娱乐.html">生活娱乐</a>
+    </nav>
+
+    <div class="grid-container"> 
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">自然科学</span>
+                <img src="图片/1.jpg" alt="韦伯望远镜">
+            </div>
+            <p>韦伯望远镜：凝视宇宙深处的“时间机器”</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">定理定律</span>
+                <img src="图片/2.jpg" alt="薛定谔的猫">
+            </div>
+            <p>薛定谔的猫：量子力学中既死又活的叠加态</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">人文艺术</span>
+                <img src="图片/3.jpg" alt="建筑美学">
+            </div>
+            <p>凝固的音乐：中世纪哥特式建筑的力学美感</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/4.jpg" alt="美拉德反应">
+            </div>
+            <p>美拉德反应：让咖啡与牛排飘香的化学秘密</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">自然科学</span>
+                <img src="图片/5.jpg" alt="DNA双螺旋">
+            </div>
+            <p>DNA双螺旋：不仅是结构，更是生命的编程语言</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">定理定律</span>
+                <img src="图片/6.jpg" alt="蝴蝶效应">
+            </div>
+            <p>蝴蝶效应：亚马逊的蝴蝶如何引发德州的龙卷风</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">人文艺术</span>
+                <img src="图片/7.jpg" alt="印象派">
+            </div>
+            <p>印象派光影：莫奈眼中捕捉的瞬息光色</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/8.jpg" alt="虚拟现实">
+            </div>
+            <p>脑机接口与VR：我们距离《黑客帝国》还有多远？</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">自然科学</span>
+                <img src="图片/9.jpg" alt="深海探索">
+            </div>
+            <p>深海热液喷口：地球早期生命的起源之地？</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">定理定律</span>
+                <img src="图片/10.jpg" alt="黄金分割">
+            </div>
+            <p>黄金分割 0.618：上帝在大自然中留下的指纹</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">人文艺术</span>
+                <img src="图片/11.jpg" alt="文物修复">
+            </div>
+            <p>我在故宫修文物：与千年前的工匠跨时空对话</p>
+        </article>
+
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/12.jpg" alt="自然疗愈">
+            </div>
+            <p>森林浴与白噪音：为什么大自然能治愈焦虑？</p>
+        </article>
+    </div>      
+</div>
+</body>
+</html>
