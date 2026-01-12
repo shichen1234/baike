@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>动态百科</title>
     <style>
+    html {
+    scroll-behavior: smooth;
+}
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 86, 179, 0.9);
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: transform 0.3s, background 0.3s;
+    backdrop-filter: blur(4px);
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #004494;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+}
         .search-box {
             position: absolute;
             top: 30px;  /* 距离顶部 */
@@ -192,7 +221,7 @@
         }
     </style>
 </head>
-<body>
+<body id="top">
 <div class="container">
     <div class="search-box">
         <input type="text" placeholder="搜索关键词...">
@@ -308,6 +337,6 @@
             <p>森林浴与白噪音：为什么大自然能治愈焦虑？</p>
         </article>
     </div>      
-</div>
+</div><a href="#top" class="back-to-top">↑</a>
 </body>
 </html>
