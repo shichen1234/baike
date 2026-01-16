@@ -5,12 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>生活娱乐</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             background-image: url('图片/背景.png');
             background-color: #f0f2f5;
@@ -20,6 +14,18 @@
             background-position: center;
             line-height: 1.5;
             font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            line-height: 1.5;
         }
 
         .container {
@@ -110,13 +116,12 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            background: rgba(0, 86, 179, 0.85);
+            background: rgba(0, 0, 0, 0.6);
             color: #fff;
-            font-size: 11px;
-            padding: 4px 10px;
-            border-radius: 20px;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
             backdrop-filter: blur(4px);
-            font-weight: 600;
         }
 
         .card-content {
@@ -185,6 +190,30 @@
         @media (max-width: 480px) {
             .grid-container { grid-template-columns: 1fr; }
         }
+        .card p {
+            padding: 16px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #2c3e50;
+            text-align: left; 
+            line-height: 1.4;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            flex-grow: 1; 
+        }
+        .category-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 86, 179, 0.85);
+            color: #fff;
+            font-size: 11px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            font-weight: 600;
+        }
     </style>
 </head>
 <body>
@@ -204,28 +233,92 @@
 
     <div class="grid-container"> 
         <article class="card">
+            <a href="六旋翼无人机01.html">
             <div class="card-thumb">
-                <span class="category-tag">自然科学</span>
-                <img src="https://picsum.photos/400/225?random=1" alt="Preview">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/13.jpg" alt="Preview">
             </div>
+            <p>六旋翼无人机</p>
+            </a>
         </article>
         <article class="card">
+            <a href="哈苏相机02.html">
             <div class="card-thumb">
-                <span class="category-tag">定理定律</span>
-                <img src="https://picsum.photos/400/225?random=1" alt="Preview">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/14.jpg" alt="Preview">
             </div>
-        </article>
-        <article class="card">
-            <div class="card-thumb">
-                <span class="category-tag">人文艺术</span>
-                <img src="https://picsum.photos/400/225?random=1" alt="Preview">
-            </div>
+            </a>
+            <p>哈苏X2D C100一亿像素中画幅相机图赏</p>
         </article>
         <article class="card">
             <div class="card-thumb">
                 <span class="category-tag">生活娱乐</span>
-                <img src="https://picsum.photos/400/225?random=1" alt="Preview">
+                <img src="图片/生活娱乐/15.jpg" alt="Preview">
             </div>
+            <p>精致美丽的景观植物对人生能量的影响</p>
+        </article>
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/16.jfif" alt="Preview">
+            </div>
+            <p>油彩画的发展历程，和它受众群体是什么样的？</p>
+        </article>
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/17.webp" alt="Preview">
+            </div>
+            <p>为何这么多年过去，《植物大战僵尸》这款游戏依然被人热爱？</p>
+        </article>
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/18.jpg" alt="Preview">
+            </div>
+            <p>布达拉宫的魅力，旅游景点推荐</p>
+        </article>
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/19.jfif" alt="Preview">
+            </div>
+            <p>各个地区的特色。各省的美食如何？</p>
+        </article>
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/20.png" alt="Preview">
+            </div>
+            <p>滑雪者在雪坡上的自由滑雪。对生命和运动的极致热爱</p>
+        </article>
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/21.jpg" alt="Preview">
+            </div>
+            <p>抖音网页版悄悄上线，PC端体验回流？</p>
+        </article>
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/22.jpeg" alt="Preview">
+            </div>
+            <p>快手：短视频拥抱每一种生活</p>
+        </article>
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/23.jfif" alt="Preview">
+            </div>
+            <p>满江红全军复诵荡气回肠，鹏举绝笔以明心迹精忠报国</p>
+        </article>
+        <article class="card">
+            <div class="card-thumb">
+                <span class="category-tag">生活娱乐</span>
+                <img src="图片/生活娱乐/24.webp" alt="Preview">
+            </div>
+            <p>日益壮大的粉丝群的相互作用下，美国电子舞曲在数十年内不断发展。</p>
         </article>
     </div>      
 </body>

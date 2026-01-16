@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>自然科学</title>
+    <title>定理定律</title>
     <style>
         * {
             margin: 0;
@@ -13,13 +13,13 @@
 
         body {
             background-image: url('图片/背景.png');
-            background-color: #f0f2f5;
             background-size: cover;
             background-repeat: no-repeat;
             background-attachment: fixed;
             background-position: center;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            color: #333;
             line-height: 1.5;
-            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
         }
 
         .container {
@@ -110,13 +110,12 @@
             position: absolute;
             top: 10px;
             left: 10px;
-            background: rgba(0, 86, 179, 0.85);
+            background: rgba(0, 0, 0, 0.6);
             color: #fff;
-            font-size: 11px;
-            padding: 4px 10px;
-            border-radius: 20px;
+            font-size: 12px;
+            padding: 4px 8px;
+            border-radius: 4px;
             backdrop-filter: blur(4px);
-            font-weight: 600;
         }
 
         .card-content {
@@ -196,38 +195,28 @@
 
     <nav>
         <a href="index.html">推荐</a>
-        <a href="自然科学.html" class="active">自然科学</a>
-        <a href="定理定律.html">定理定律</a>
+        <a href="自然科学.html"class="active">自然科学</a>
+        <a href="定理定律.html" >定理定律</a>
         <a href="人文艺术.html">人文艺术</a>
         <a href="生活娱乐.html">生活娱乐</a>
     </nav>
 
     <div class="grid-container"> 
         <article class="card">
+            <a href="1.html">
             <div class="card-thumb">
-                <span class="category-tag">自然科学</span>
-                <img src="https://picsum.photos/400/225?random=1" alt="Preview">
-            </div>
+                <span class="category-tag">科普现象</span>
+                <img src="images/zz10.jpg" alt="Preview">
+            </div></a>
         </article>
         <article class="card">
+            <a href="ll.html">
             <div class="card-thumb">
-                <span class="category-tag">定理定律</span>
-                <img src="https://picsum.photos/400/225?random=1" alt="Preview">
-            </div>
+                <span class="category-tag">科普文章</span>
+                <img src="images/zz11.jpg" alt="Preview">
+            </div></a>
         </article>
-        <article class="card">
-            <div class="card-thumb">
-                <span class="category-tag">人文艺术</span>
-                <img src="https://picsum.photos/400/225?random=1" alt="Preview">
-            </div>
-        </article>
-        <article class="card">
-            <div class="card-thumb">
-                <span class="category-tag">生活娱乐</span>
-                <img src="https://picsum.photos/400/225?random=1" alt="Preview">
-            </div>
-        </article>
-    </div>      
+    </div> 
 </body>
 </html>
 

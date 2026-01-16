@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百度艺术百科 - 艺术资讯展示</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f0f2f5;
+            color: #333;
+            scroll-behavior: smooth; /* 平滑滚动核心属性 */
+        }
+        /* 头部banner */
+        .header-banner {
+            width: 100%;
+            height: 300px;
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            border-bottom: 2px solid #0066cc; /* 信息科技学院主题蓝 */
+        }
+        .banner-item {
+            flex: 1;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+       .banner-item:nth-child(1) {
+            background-image: url("images/zzz1.png");
+        }
+        .banner-item:nth-child(2) {
+            background-image: url("images/zzz2.v2");
+        }
+        .banner-item:nth-child(3) {
+            background-image: url("images/zzz3.v2");
+        }
+        .art-title {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .art-data {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        /* 导航栏 */
+        .nav-tab {
+            display: flex;
+            background-color: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            padding: 0 20px;
+            position: sticky; /* 导航栏吸顶 */
+            top: 0;
+            z-index: 999;
+        }
+        .nav-item {
+            padding: 15px 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        .nav-item.active {
+            color: #0066cc;
+            border-bottom: 3px solid #0066cc;
+            font-weight: bold;
+        }
+        .nav-item:hover {
+            background-color: #f9fafb;
+        }
+        /* 内容容器 */
+        .content-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+        /* 各板块样式 */
+        .content-section {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            min-height: 500px; /* 保证板块高度，方便测试下滑 */
+        }
+        .section-title {
+            font-size: 24px;
+            color: #0066cc;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+       
+       
+        .artist-list  .d-list.c-list.ch-list.j-list .ji-list.r-list.ca-list.ha-list.hu-list.li-list.s-list.y-list.da-list.sh-list{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        .artist-item .d-item .c-item .ch-item .j-item.ji-item.r-item.ca-item.ha-item.hu-item.li-item.s-item.y-item.da-item.sh-item{
+            display: flex;
+    
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+            box-sizing: border-box;
+           padding: 0 20px;
+        }
+        .artist-img .d-img.c-img.ch-img.j-img.ji-img.r-img.ca-img.ha-img.hu-img.li-img.s-img.y-img.da-img.sh-img{
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            margin-bottom: 0;
+        
+        }
+        .text-container{
+            width: 100%;
+            flex: 1;
+            min-width: 550px;
+        }
+        .text-title {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+           text-align: center;
+        }
+        
+        .text-paragraph {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #444;
+            margin-bottom: 15px;
+            text-align: justify;
+            width: 100%;
+            margin: 0;
+            word-break: break-all;
+        }
+       
+      
+        @media (max-width: 768px) {
+            .header-banner {
+                height: 200px;
+            }
+            .art-title {
+                font-size: 24px;
+            }
+            .nav-item {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+            .artist-list {
+                grid-template-columns: repeat(2, 1fr);
+            }
+           
+        }
+        @media (max-width: 480px) {
+            .artist-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-banner">
+        <div class="banner-item"></div>
+        <div class="banner-item"></div>
+        <div class="banner-item">
+           
+        </div>
+    </div>
+
+
+    <div class="nav-tab">
+         <div class="nav-item active" data-target="artist">拉尼娜现象</div>
+        <div class="nav-item" data-target="d">地磁爆</div>
+        <div class="nav-item" data-target="c">超级月亮</div>
+        <div class="nav-item" data-target="ch">潮汐</div>
+        <div class="nav-item" data-target="j">极光</div>
+         <div class="nav-item " data-target="ji">极昼极夜</div>
+        <div class="nav-item" data-target="r">日食月食</div>
+        <div class="nav-item" data-target="ca">彩虹</div>
+        <div class="nav-item" data-target="ha">海市蜃楼</div>
+        <div class="nav-item" data-target="hu">火山喷发</div>
+         <div class="nav-item " data-target="li">流星</div>
+        <div class="nav-item" data-target="s">闪电</div>
+        <div class="nav-item" data-target="y">月相盈亏</div>
+        <div class="nav-item" data-target="da">黄道光</div>
+        <div class="nav-item" data-target="sh">沙尘暴</div>
+    </div>
+
+
+    <div class="content-container">
+        <div id="artist" class="content-section">
+            <h3 class="section-title">拉尼娜</h3>
+            <div class="artist-list">
+                <div class="artist-item"> 
+                    <img src="images/zz1.webp" alt="艺术家1" class="artist-img">
+                 <div class="text-container">
+     <h2 class="text-title">拉尼娜现象的基本介绍</h2>
+                <p class="text-paragraph">拉尼娜现象是指赤道中东太平洋海水温度异常偏低的气候现象，与厄尔尼诺现象相对，共同构成厄尔尼诺-南方涛动（ENSO）循环的两个极端状态。拉尼娜现象的形成主要与赤道太平洋的信风增强有关，信风推动表层暖水向西太平洋流动，导致东太平洋深层冷水上翻，海水温度下降。拉尼娜现象通常每2-7年发生一次，持续时间一般为9-12个月。它会对全球气候产生显著影响，比如导致东南亚地区降雨偏多、澳大利亚东部遭遇洪水，而南美洲西海岸则出现干旱，同时也会加剧北半球中高纬度地区的寒潮天气。气象部门会通过监测赤道太平洋海水温度、大气环流等指标来判断拉尼娜现象的形成和发展，其监测结果也为全球气候预测和防灾减灾工作提供重要依据</p>      
+        
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="d" class="content-section">
+            <h3 class="section-title">地磁爆</h3>
+            <div class="d-list">
+                <div class="d-item"> 
+                    <img src="images/zz2.webp" alt="艺术家1" class="d-img">
+                 <div class="text-container">
+     <h2 class="text-title">地磁爆现象的基本介绍</h2>
+                <p class="text-paragraph">由太阳活动（如日冕物质抛射）引发的地球磁场剧烈扰动现象，是太阳能量对地球空间环境的强烈冲击。地磁爆发生时，会干扰无线电通信、卫星导航和电力系统运行，甚至损坏卫星设备；同时，高能带电粒子会撞击地球高层大气，在南北两极地区激发绚丽的极光，成为地磁爆的直观视觉表现。</p>      
+        
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="c" class="content-section">
+            <h3 class="section-title">超级月亮</h3>
+            <div class="c-list">
+                <div class="c-item"> 
+                    <img src="images/zz3.webp" alt="艺术家1" class="c-img">
+                 <div class="text-container">
+     <h2 class="text-title">超级月亮现象的基本介绍</h2>
+                <p class="text-paragraph">月球运行至近地点附近且恰逢满月的天文现象，此时月球与地球的距离比平时近约 5 万公里，视觉上月亮的直径比远地点满月大 14%、亮度高 30%，观赏效果极佳。超级月亮并非罕见现象，每年通常会出现 3-4 次，其形成源于月球绕地球的椭圆轨道，当近地点与满月时间差小于 24 小时，便会形成视觉效果显著的超级月亮。</p>      
+        
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="ch" class="content-section">
+            <h3 class="section-title">潮汐</h3>
+            <div class="ch-list">
+                <div class="ch-item"> 
+                    <img src="images/zz4.jpg" alt="艺术家1" class="ch-img">
+                 <div class="text-container">
+     <h2 class="text-title">潮汐现象的基本介绍</h2>
+                <p class="text-paragraph">由月球和太阳的引潮力共同作用，导致海洋水面周期性涨落的自然现象，是地球天体运动的典型产物。潮汐的周期约为 12 小时 25 分，分为涨潮、落潮，而每月的大潮和小潮则由日月引潮力的叠加或抵消形成。潮汐深刻影响沿海生态系统，如潮间带生物的生存节律，也被人类利用于潮汐发电、航运等领域。</p>
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="j" class="content-section">
+            <h3 class="section-title">极光</h3>
+            <div class="j-list">
+                <div class="j-item"> 
+                    <img src="images/zz5.jpg" alt="艺术家1" class="j-img">
+                 <div class="text-container">
+     <h2 class="text-title">极光现象的基本介绍</h2>
+                <p class="text-paragraph">高能带电粒子（主要来自太阳风）撞击地球高层大气，使大气分子激发、电离而产生的发光现象，多出现于南北两极的高纬度地区。极光的颜色以绿色为主，偶尔会出现红色、紫色，形态呈帘状、弧状或带状，变幻莫测。其形成依赖地球磁场的引导，磁场将带电粒子导向两极，让极光成为极地独有的壮丽自然景观。</p>
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="ji" class="content-section">
+            <h3 class="section-title">极昼极夜</h3>
+            <div class="ji-list">
+                <div class="ji-item"> 
+                    <img src="images/zz6.webp" alt="艺术家1" class="ji-img">
+                 <div class="text-container">
+     <h2 class="text-title">极昼极夜现象的基本介绍</h2>
+                <p class="text-paragraph">地球两极地区因公转和黄赤交角产生的特殊天文现象，发生在北极圈以北和南极圈以南区域。极昼时，太阳终日不落，天空始终明亮，持续时间随纬度升高而增加，北极点的极昼长达半年；极夜则相反，太阳长期隐没，大地陷入持续黑暗。极昼极夜的交替出现，塑造了极地独特的生态环境和生物习性。</p>
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="r" class="content-section">
+            <h3 class="section-title">日食月食</h3>
+            <div class="r-list">
+                <div class="r-item"> 
+                    <img src="images/zz7.jpg" alt="艺术家1" class="r-img">
+                 <div class="text-container">
+     <h2 class="text-title">日食月食现象的基本介绍</h2>
+                <p class="text-paragraph">日食是月球运行至地球与太阳之间，遮挡太阳光线形成的天文现象，分日全食、日偏食、日环食三种，只有在月球本影或半影覆盖的区域才能观测到。月食是地球运行至月球与太阳之间，挡住太阳射向月球的光，月球进入地球阴影而变暗的现象，包括月全食、月偏食和半影月食，在地球夜半球均可观测。二者均为天体运行轨道重合的经典天文事件。</p>
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="ca" class="content-section">
+            <h3 class="section-title">彩虹</h3>
+            <div class="ca-list">
+                <div class="ca-item"> 
+                    <img src="images/zz8.jpg" alt="艺术家1" class="ca-img">
+                 <div class="text-container">
+     <h2 class="text-title">彩虹现象的基本介绍</h2>
+                <p class="text-paragraph">阳光射入空中的水滴，经折射、反射和色散作用形成的弧形彩色光带，常见于雨后放晴的天空。彩虹由红、橙、黄、绿、蓝、靛、紫七种色光组成，这是由于不同波长的光在水滴中折射角度不同。通常看到的是主虹，有时会出现外侧的副虹（霓），颜色顺序与主虹相反，亮度更暗，是光的色散现象的直观体现。</p>
+                    </div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="ha" class="content-section">
+            <h3 class="section-title">海市蜃楼</h3>
+            <div class="ha-list">
+                <div class="ha-item"> 
+                    <img src="images/zz9.webp" alt="艺术家1" class="ha-img">
+                 <div class="text-container">
+     <h2 class="text-title">海市蜃楼现象的基本介绍</h2>
+                <p class="text-paragraph">因光的折射和全反射形成的光学幻景，多发生在海面、沙漠等温差较大的区域。当空气层密度随高度变化时，远处景物的光线会发生偏折，将影像投射到观察者眼前，形成看似真实却虚幻的景象。海市蜃楼分为上现蜃景（海面多见，景物向上抬升）和下现蜃景（沙漠多见，景物向下倒转），是大气光学的奇妙产物。</p>
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="hu" class="content-section">
+            <h3 class="section-title">火山喷发</h3>
+            <div class="hu-list">
+                <div class="hu-item"> 
+                    <img src="images/zz10.jpg" alt="艺术家1" class="hu-img">
+                 <div class="text-container">
+     <h2 class="text-title">火山喷发现象的基本介绍</h2>
+                <p class="text-paragraph">地球内部的岩浆、气体和碎屑物质通过火山口喷出地表的地质现象，是地球内部能量的剧烈释放。火山喷发的原因主要是板块运动或地幔柱活动，导致岩石熔融形成岩浆，在压力作用下冲破地壳。喷发会塑造火山锥、熔岩台地等地形，也可能引发地震、海啸、火山灰灾害，但同时也会带来肥沃的火山土壤，促进区域生态发展。</p>
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="li" class="content-section">
+            <h3 class="section-title">流星</h3>
+            <div class="li-list">
+                <div class="li-item"> 
+                    <img src="images/zz11.jpg" alt="艺术家1" class="li-img">
+                 <div class="text-container">
+     <h2 class="text-title">流星现象的基本介绍</h2>
+                <p class="text-paragraph">星际空间的流星体（微小固体颗粒）闯入地球大气层，与大气摩擦燃烧产生的光迹，俗称 “贼星”。流星体多来自小行星带或彗星残骸，直径从毫米到米不等，大部分在大气层中燃烧殆尽。当大量流星体沿同一轨道闯入地球，便会形成流星雨，如狮子座流星雨、英仙座流星雨，是夜空中极具观赏性的天文现象。</p>
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="s" class="content-section">
+            <h3 class="section-title">闪电</h3>
+            <div class="s-list">
+                <div class="s-item"> 
+                    <img src="images/zz12.jpg" alt="艺术家1" class="s-img">
+                 <div class="text-container">
+     <h2 class="text-title">闪电现象的基本介绍</h2>
+                <p class="text-paragraph">积雨云中正负电荷区域之间发生的强烈放电现象，常伴随雷声，是强对流天气的典型特征。闪电的形成源于云层中水滴、冰晶的碰撞摩擦，使电荷分离积累，当电场强度足够大时，就会击穿空气形成放电通道，产生耀眼的电光。闪电的平均电流达数万安培，易引发雷击灾害，也会促进大气中臭氧的生成。
+</p>
+</div>
+            </div>
+         </div>
+          </div>
+          <div class="content-container">
+        <div id="y" class="content-section">
+            <h3 class="section-title">月相盈亏</h3>
+            <div class="y-list">
+                <div class="y-item"> 
+                    <img src="images/zz13.jpg" alt="艺术家1" class="y-img">
+                 <div class="text-container">
+     <h2 class="text-title">月相盈亏现象的基本介绍</h2>
+                <p class="text-paragraph">月球绕地球公转过程中，因太阳照射角度变化，在地球上看到的月球圆缺变化现象，其周期约 29.5 天（朔望月）。月相依次为新月（朔）、上弦月、满月（望）、下弦月，循环往复。新月时月球位于地球与太阳之间，暗面朝向地球；满月时地球位于日月之间，亮面完全朝向地球。月相变化是农历历法制定的核心依据，也影响着海洋潮汐的大小。</p>
+</div>
+            </div>
+         </div>
+          </div>
+<div class="content-container">
+        <div id="hu" class="content-section">
+            <h3 class="section-title">黄道光</h3>
+            <div class="hu-list">
+                <div class="hu-item"> 
+                    <img src="images/zz14.webp" alt="艺术家1" class="hu-img">
+                 <div class="text-container">
+     <h2 class="text-title">黄道光现象的基本介绍</h2>
+                <p class="text-paragraph">由行星际尘埃散射太阳光形成的微弱光带，沿黄道面延伸，是太阳系内星际尘埃的直观体现。黄道光的亮度较暗，需在远离城市光污染的地区，于黎明或黄昏时观测，低纬度地区观测效果更佳。其尘埃颗粒直径约 1 微米，主要来自彗星蒸发和小行星碰撞，分布在太阳周围的黄道面附近，形成了这片朦胧的光带。</p>
+</div>
+            </div>
+         </div>
+          </div><div class="content-container">
+        <div id="sh" class="content-section">
+            <h3 class="section-title">沙尘暴</h3>
+            <div class="sh-list">
+                <div class="sh-item"> 
+                    <img src="images/zz15.png" alt="艺术家1" class="sh-img">
+                 <div class="text-container">
+     <h2 class="text-title">沙尘暴现象的基本介绍</h2>
+                <p class="text-paragraph">强风将地面沙尘卷起，使空气浑浊、能见度低于 1 公里的灾害性天气现象，多发生在干旱、半干旱地区。沙尘暴的形成需满足强风、沙源和不稳定的大气条件，我国西北、华北地区是高发区域。它会造成空气污染、土地沙化、农作物受损，还会影响交通和人体健康；但同时也会将沙尘输送至海洋，为海洋生态系统提供营养物质。</p>
+</div>
+            </div>
+         </div>
+          </div>
+        
+
+    <script>
+        // 导航栏点击事件与锚点跳转
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('click', function() {
+                // 移除所有active类
+                navItems.forEach(nav => nav.classList.remove('active'));
+                // 给当前点击项添加active类
+                this.classList.add('active');
+                // 获取目标锚点id
+                const targetId = this.getAttribute('data-target');
+                // 滚动到对应区域
+                document.getElementById(targetId).scrollIntoView({
+                    behavior: 'smooth' // 平滑滚动
+                });
+            });
+        });
+    </script>
+</body>
+</html>
