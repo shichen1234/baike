@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>山西文学 · 三晋文脉</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        wenxue: {
+                            dark: '#2C3E50',
+                            red: '#A62424',
+                            light: '#F8F5F0'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .card-hover { transition: transform 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); }
+    </style>
+</head>
+<body class="bg-wenxue-light">
+    <!-- 导航栏 -->
+    <nav class="bg-wenxue-dark/95 text-white fixed w-full z-10">
+        <div class="container mx-auto px-4 py-2 flex justify-between items-center">
+            <h1 class="text-lg font-bold flex items-center">
+                <i class="fa fa-book mr-2"></i>山西文学
+            </h1>
+            <div class="space-x-3 text-sm">
+                <a href=" " class="hover:text-wenxue-red">简介</a >
+                <a href="#masters" class="hover:text-wenxue-red">名家</a >
+                <a href="#works" class="hover:text-wenxue-red">名作</a >
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区 -->
+    <header class="pt-16 pb-8 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/1074/1200/500');">
+        <div class="bg-black/50 w-full h-full p-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2">三晋文脉 千古流芳</h2>
+            <p class="text-white/90 text-sm md:text-base max-w-sm mx-auto">黄土高原孕育的文学高地</p >
+        </div>
+    </header>
+
+    <!-- 核心内容 -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- 文学简介 -->
+        <section id="intro" class="mb-8 text-center">
+            <h3 class="text-xl font-bold text-wenxue-red mb-3">山西文学概览</h3>
+            <p class="text-wenxue-dark text-sm md:text-base max-w-xl mx-auto">
+                山西文学植根黄土大地，兼具雄浑厚重与质朴灵动的气质。从古代诗词到现当代小说，名家辈出，佳作频传，
+                以独特的地域文化底色，在中国文学版图中占据重要一席。
+            </p >
+        </section>
+
+        <!-- 文学名家 -->
+        <section id="masters" class="mb-8">
+            <h3 class="text-xl font-bold text-wenxue-red mb-3 text-center">文坛名家</h3>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
+                <div class="bg-white rounded shadow p-2 text-center card-hover">
+                    <i class="fa fa-user text-wenxue-red text-xl mb-1"></i>
+                    <p class="font-bold text-xs">柳宗元</p >
+                    <p class="text-gray-600 text-[10px]">唐代文学家</p >
+                </div>
+                <div class="bg-white rounded shadow p-2 text-center card-hover">
+                    <i class="fa fa-user text-wenxue-red text-xl mb-1"></i>
+                    <p class="font-bold text-xs">罗贯中</p >
+                    <p class="text-gray-600 text-[10px]">《三国演义》作者</p >
+                </div>
+                <div class="bg-white rounded shadow p-2 text-center card-hover">
+                    <i class="fa fa-user text-wenxue-red text-xl mb-1"></i>
+                    <p class="font-bold text-xs">赵树理</p >
+                    <p class="text-gray-600 text-[10px]">山药蛋派创始人</p >
+                </div>
+                <div class="bg-white rounded shadow p-2 text-center card-hover">
+                    <i class="fa fa-user text-wenxue-red text-xl mb-1"></i>
+                    <p class="font-bold text-xs">贾平凹</p >
+                    <p class="text-gray-600 text-[10px]">当代文学大家</p >
+                </div>
+            </div>
+        </section>
+
+        <!-- 经典名作 -->
+        <section id="works">
+            <h3 class="text-xl font-bold text-wenxue-red mb-3 text-center">经典名作</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                <div class="bg-white rounded overflow-hidden shadow card-hover">
+                    <img src="images/rrsanguo.jpg" alt="三国演义" class="w-full h-32 object-cover">
+                    <div class="p-2 text-center">
+                        <h4 class="font-bold text-xs text-wenxue-dark">《三国演义》</h4>
+                        <p class="text-gray-500 text-[10px]">罗贯中 · 中国古典四大名著之一</p >
+                    </div>
+                </div>
+                <div class="bg-white rounded overflow-hidden shadow card-hover">
+                    <img src="images/rrerxiao.jpg" alt="小二黑结婚" class="w-full h-32 object-cover">
+                    <div class="p-2 text-center">
+                        <h4 class="font-bold text-xs text-wenxue-dark">《小二黑结婚》</h4>
+                        <p class="text-gray-500 text-[10px]">赵树理 · 山药蛋派代表作</p >
+                    </div>
+                </div>
+                <div class="bg-white rounded overflow-hidden shadow card-hover">
+                    <img src="images/rrqinqiang.jpg"alt="秦腔" class="w-full h-32 object-cover">
+                    <div class="p-2 text-center">
+                        <h4 class="font-bold text-xs text-wenxue-dark">《秦腔》</h4>
+                        <p class="text-gray-500 text-[10px]">贾平凹 · 描摹乡土中国</p >
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-wenxue-dark text-white text-center py-2 mt-6">
+        <p class="text-xs">© 2026 山西文学 | 文脉传承</p >
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>

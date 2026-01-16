@@ -3,25 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>美拉德反应</title>
+    <title>动态公式</title>
     <style>
-        body {
-            background-image: url('../图片/背景.png');
-            background-color: #f0f2f5;
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center;
-            line-height: 1.5;
-            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        *{
+           
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        h1{
+        .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: rgba(0, 86, 179, 0.9);
+    color: white;
+    text-decoration: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    z-index: 999;
+    transition: transform 0.3s;
+    backdrop-filter: blur(4px);
+}
+
+   .back-to-top:hover {
+    transform: translateY(-5px);
+    background: #004494;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+   }
+        body{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            align-items: center;
+            background: #5594b8;
+        }
+        nav{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            background-color: #cbd8e0;
+            height: 200px;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius:20px;
+    
+        }
+        
+        nav a{
+            font-size: 18px;
+            font-weight: 500;
+            color: #333333;
+            letter-spacing: 2px;
+            width: 220px;
+            display: inline-block;
+            text-decoration: none;
             text-align: center;
         }
+        nav a:hover{
+            color: rgb(112, 106, 130);
+            transform: scale(1.05);
+            transition: all 0.3s ease;
+        } 
+
+        .con{
+            position: relative;
+            width: 2200px;
+            display: flex;
+            gap: 100px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 30px;
+        }
+        .con .card{
+            max-width: 300px;
+            height: 225px;
+            border: 1px solid #ccc;
+            position: relative;
+            background: #c3c6e2;
+            margin: 30px 10px;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 5px 202px rgba(0,0,0,0.5);
+            transition: 0.3s ease-in-out;
+        }
+        .con .card:hover{
+            height: 420px;
+        }
+        .con .card .im{
+            position: relative;
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            object-fit: cover;
+            width: 260px;
+            height: 260px;
+            top: -60px;
+            left: 20;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .com .card .im img{
+            max-width: 100%;
+            border-radius: 4px;
+
+        }
+        .con .card .content{
+            position:relative;
+            margin-top: -30px;
+            padding: 10px 15px;
+            text-align: center;
+            color: #111;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.3s ease-in-out;
+        }
+        .con .card:hover .content{
+            visibility: visible;
+            opacity: 1;
+            margin-top: -40px;
+            transition-delay: 0.3s;
+        }
+        .tit{
+            color: #327caa;
+            margin-top: 0;
+            top: 0;
+            font-size: 50px;
+            font-family: "微软雅黑";
+        }
+       
+        h1{text-align: center;
+        display: block;
+        margin: 0;
+        padding: 10px 0;}
     </style>
 </head>
 <body>
-    <h1>美拉德反应：让咖啡与牛排飘香的化学秘密</h1>
-    <p>韦伯是一台专注于红外波段的“时间机器”，它被设计用来回望135亿年前宇宙的黎明时分，去捕捉第一批恒星与星系诞生的微光。 它由一面巨大的、由18块六边形镜片拼接而成的金色主镜、一个网球场大小的五层遮阳板以及一套超低温科学仪器组成。 它不是在地球轨道上运行，而是驻扎在距地球150万公里的日地拉格朗日L2点，永远背对太阳，用它深邃的“复眼”凝视着宇宙最遥远、最黑暗的角落。 韦伯的故事，始于一个伟大的成功。</p>
+    <div class="title">
+    <nav>
+        <a href=""></a>
+        <a href="#"><h1>//动态公式//--></h1></a>
+        <a href=""></a>
+    </nav>       
+</div> 
+    <div class="con">
+        <div class="card">
+            <div class="im">
+                <img src="imges/Da.gif" alt="">
+            </div>
+         <div class="content">
+            <br>
+             <h2>三角形的重心</h2>
+             <p>三角形三条中线的交点即为重心。中线是连接三角形一个顶点和对边中点的线段。</p>
+         </div>
+        </div>
+        <div class="card">
+            <div class="im">
+                <img src="imges/Dd.gif" alt="">
+            </div>
+            <div class="content">
+                <br>
+                <br>
+                <br>
+            <h2>勾股定理</h2>
+            <p>勾股定理的图解</p>
+           </div>
+        </div>
+         <div class="card">
+            <div class="im">
+                <img src="imges/De.gif" alt="">
+            </div>
+            <div class="content">
+                <br>
+            <h2>函数</h2>
+            <p>圆的几何运动</p>
+            </div>
+        </div>
+    </div> <a href="#top" class="back-to-top">↑</a>  
 </body>
 </html>

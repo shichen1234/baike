@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平遥古城 · 千年晋商故里</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ancient: '#8B4513',
+                        brick: '#D2691E',
+                        earth: '#F5DEB3',
+                        ink: '#2F4F4F',
+                    },
+                    fontFamily: {
+                        serif: ['"Ma Shan Zheng"', 'cursive', 'serif'],
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow-ancient {
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            }
+            .bg-brick-gradient {
+                background: linear-gradient(135deg, #D2691E, #8B4513);
+            }
+            .parallax-pingyao {
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
+</head>
+<body class="font-sans bg-earth text-ink">
+    <!-- 导航栏 -->
+    <nav class="fixed top-0 left-0 w-full bg-ancient/95 text-white z-50 transition-all duration-300" id="navbar">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            
+                <i class="fa fa-building-o mr-2"></i>
+                平遥古城
+            
+            <div class="hidden md:flex space-x-8">
+                古城概况
+                风貌掠影
+                晋商文化
+                游玩指南
+            </div>
+            <button class="md:hidden text-xl" id="menuBtn">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <div class="md:hidden hidden bg-ancient/95" id="mobileMenu">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+                古城概况
+                风貌掠影
+                晋商文化
+                游玩指南
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区 -->
+    <header class="relative pt-24 pb-16 md:pt-32 md:pb-24 parallax-pingyao" style="background-image: url('https://picsum.photos/id/1039/1920/1080');">
+        <div class="absolute inset-0 bg-black/40"></div>
+        <div class="container mx-auto px-4 text-center relative z-10">
+            <h1 class="text-[clamp(3rem,10vw,5.5rem)] font-serif font-bold text-white text-shadow-ancient mb-4">
+                平遥古城
+            </h1>
+            <p class="text-[clamp(1.2rem,4vw,1.8rem)] text-white/90 max-w-3xl mx-auto mb-8">
+                中国保存最完整的明清古城，晋商文化的活化石
+            </p >
+            
+                探索古城 <<<i class="fa fa-arrow-down ml-2"></</</i>
+            
+        </div>
+    </header>
+
+    <!-- 古城概况 -->
+    <section id="about" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-ancient mb-6">
+                        千年古城的<span class="text-brick">历史脉络</span>
+                    </h2>
+                    <p class="text-lg mb-4">
+                        平遥古城始建于西周宣王时期（公元前827年～公元前782年），明洪武三年（1370年）扩建，距今已有2800多年历史。
+                    </p >
+                    <p class="text-lg mb-4">
+                        它是中国汉民族地区现存最为完整的古城，1997年被列入《世界遗产名录》，以“一城两寺”（古城、双林寺、镇国寺）的遗产格局著称。
+                    </p >
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-xl font-bold text-ancient mb-2">世界遗产</h3>
+                            <p>1997年入选</p >
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-xl font-bold text-ancient mb-2">古城面积</h3>
+                            <p>2.25平方公里</p >
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-xl font-bold text-ancient mb-2">建筑年代</h3>
+                            <p>西周至今</p >
+                        </div>
+                        <div class="bg-white p-4 rounded-lg shadow">
+                            <h3 class="text-xl font-bold text-ancient mb-2">文化地位</h3>
+                            <p>晋商文化核心</p >
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="rounded-xl overflow-hidden shadow-xl">
+                        < img src="https://picsum.photos/id/1040/800/600" alt="平遥古城全景" class="w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 风貌掠影 -->
+    <section id="scenery" class="py-16 md:py-24 bg-gradient-to-b from-earth to-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-ancient text-center mb-12">
+                古城风貌<span class="text-brick">掠影</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://picsum.photos/id/1041/600/400" alt="古城墙" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <h3 class="text-white text-xl font-bold">古城墙</h3>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://picsum.photos/id/1042/600/400" alt="平遥县衙" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <h3 class="text-white text-xl font-bold">平遥县衙</h3>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://picsum.photos/id/1043/600/400" alt="日升昌票号" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <h3 class="text-white text-xl font-bold">日升昌票号</h3>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://picsum.photos/id/1044/600/400" alt="平遥文庙" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <h3 class="text-white text-xl font-bold">平遥文庙</h3>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://picsum.photos/id/1045/600/400" alt="古城街巷" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <h3 class="text-white text-xl font-bold">古城街巷</h3>
+                    </div>
+                </div>
+                <div class="group relative rounded-xl overflow-hidden shadow-lg">
+                    <img src="https://picsum.photos/id/1046/600/400" alt="双林寺彩塑" class="w-full h-64 object-cover transition-transform duration-700 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                        <h3 class="text-white text-xl font-bold">双林寺彩塑</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 晋商文化 -->
+    <section id="culture" class="py-16 md:py-24">
+        <div class="container mx-auto px-4">
+            <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-ancient text-center mb-12">
+                晋商文化<span class="text-brick">精髓</span>
+            </h2>
+            <div class="flex flex-col md:flex-row gap-10">
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-ancient mb-4">日升昌票号——中国第一家票号</h3>
+                        <p class="mb-4">
+                            日升昌票号创立于清道光三年（1823年），是中国现代银行的雏形，开创了汇兑业务的先河，鼎盛时期在全国设有30多家分号，业务遍及全国乃至海外。
+                        </p >
+                        <p class="mb-4">
+                            票号内的“汇通天下”匾额，是晋商金融帝国的象征，其经营理念和管理制度，对现代金融业仍有借鉴意义。
+                        </p >
+                        <div class="flex items-center mt-6">
+                            <img src="https://picsum.photos/id/1047/100/100" alt="日升昌票号内景" class="w-20 h-20 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-bold">日升昌票号</h4>
+                                <p class="text-sm text-gray-600">中国最早的“银行”</p >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <div class="bg-white rounded-xl shadow-lg p-8">
+                        <h3 class="text-2xl font-bold text-ancient mb-4">晋商精神——诚信、创新、务实</h3>
+                        <p class="mb-4">
+                            晋商以“诚信为本”为经营理念，票号采用“身股制”激励员工，开创了职业经理人的先河。他们在茫茫戈壁开辟商路，将生意做到俄罗斯、日本等地，形成了庞大的商业网络。
+                        </p >
+                        <p class="mb-4">
+                            平遥古城的票号、镖局、商号建筑群，是晋商商业帝国的实物见证，每一处院落都藏着一段经商智慧的故事。
+                        </p >
+                        <div class="flex items-center mt-6">
+                            <img src="https://picsum.photos/id/1048/100/100" alt="晋商院落" class="w-20 h-20 rounded-full object-cover mr-4">
+                            <div>
+                                <h4 class="font-bold">晋商文化</h4>
+                                <p class="text-sm text-gray-600">明清商业的巅峰</p >
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 游玩指南 -->
+    <section id="visit" class="py-16 md:py-24 bg-gradient-to-b from-white to-earth">
+        <div class="container mx-auto px-4">
+            <h2 class="text-[clamp(1.8rem,5vw,3rem)] font-serif font-bold text-ancient text-center mb-12">
+                游玩<span class="text-brick">指南</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        < img src="https://picsum.photos/id/1049/600/400" alt="最佳旅游时间" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ancient mb-3">最佳旅游时间</h3>
+                        <p class="text-dark/70 mb-4">
+                            春秋两季（4-5月、9-10月），气候宜人，古城景色雅致，避开夏季酷暑和冬季严寒。
+                        </p >
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-brick mr-2"></i>
+                                4-5月：古城春意盎然，游客适中
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-check text-brick mr-2"></i>
+                                9-10月：秋高气爽，摄影出片率高
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://picsum.photos/id/1050/600/400" alt="必体验项目" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-ancient mb-3">必体验项目</h3>
+                        <p class="text-dark/70 mb-4">
+                            深度感受古城文化，这些体验不容错过。
+                        </p >
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fa fa-star text-brick mr-2"></i>
+                                登古城墙，俯瞰古城全貌
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-star text-brick mr-2"></</</i>
+                                逛日升昌票号，了解晋商金融史
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-star text-brick mr-2"></</</i>
+                                看一场平遥皮影戏，体验非遗魅力
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fa fa-star text-brick mr-2"></</</i>
+                                住一晚古城民宿，感受慢生活
+                            </li>
+                        </ul>
+                    </div>
+                </div>

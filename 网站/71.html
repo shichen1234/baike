@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>山西非遗3D立方体（适配任意尺寸图片）</title>
+ <style>
+        :root {
+            --primary: #c62828;
+            --secondary: #ff8a65;
+            --bg: #f9f9f9;
+            --text: #333;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        body {
+            background: linear-gradient(135deg, var(--bg), #eaeaea);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+        h1::after {
+            content: "";
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 3px;
+        }
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+        .cube-wrapper {
+            perspective: 1500px;
+            margin-bottom: 4rem;
+        }
+        .cube {
+            width: 400px;
+            height: 400px;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 20s linear infinite;
+            transition: animation-play-state 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        .cube:hover {
+            animation-play-state: paused;
+        }
+        .face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            border-radius: 4px;
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .face img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .face:hover img {
+            transform: scale(1.05);
+        }
+        .front { transform: translateZ(200px); }
+        .back { transform: translateZ(-200px) rotateY(180deg); }
+        .left { transform: translateX(-200px) rotateY(-90deg); }
+        .right { transform: translateX(200px) rotateY(90deg); }
+        .top { transform: translateY(-200px) rotateX(90deg); }
+        .bottom { transform: translateY(200px) rotateX(-90deg); }
+        @keyframes rotate {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+        .card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        .card-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+        .card-content {
+            padding: 1.5rem;
+        }
+        .card-title {
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        .card-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+        footer {
+            margin-top: 4rem;
+            text-align: center;
+            color: #888;
+            font-size: 0.9rem;
+        }
+        @media (max-width: 768px) {
+            .cube {
+                width: 300px;
+                height: 300px;
+            }
+            .front, .back, .left, .right, .top, .bottom {
+                transform: translateZ(150px) !important; /* 适配移动端3D效果 */
+            }
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>山西非物质文化遗产</h1>
+        <p class="subtitle">以3D艺术形式探索千年民俗之美</p >
+    </header>
+
+    <div class="cube-wrapper">
+        <div class="cube">
+            <div class="face front"><img src="images/rr5.jpg" alt="闻喜花馍"></div>
+            <div class="face back"><img src="images/rr2.jpg" alt="霍州面塑"></div>
+            <div class="face left"><img src="images/rr4.jpg" alt="襄垣剪纸"></div>
+            <div class="face right"><img src="images/rr6.jpg" alt="太平绣球"></div>
+            <div class="face top"><img src="images/rr7.jpg" alt="浮山木偶"></div>
+            <div class="face bottom"><img src="images/rr8.jpg alt="浮山木偶"></div>
+        </div>
+    </div>
+
+    <div class="gallery">
+        <div class="card">
+            <div class="card-img"><img src="images/rr4.jpg" alt="山西剪纸"></div>
+            <div class="card-content">
+                <h3 class="card-title">山西剪纸</h3>
+                <p class="card-desc">历史悠久，风格多样，以其精湛的技艺和浓郁的地方特色著称，是山西民间艺术的瑰宝。</p >
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img"><img src="images/rr6.jpg" alt="面塑艺术"></div>
+            <div class="card-content">
+                <h3 class="card-title">面塑艺术</h3>
+                <p class="card-desc">以面粉为原料，经手工捏制、彩绘而成，造型生动，色彩鲜艳，常用于民俗节庆和祭祀活动。</p >
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-img"><img src="images/rr8.jpg" alt="传统木偶"></div>
+            <div class="card-content">
+                <h3 class="card-title">浮山木偶</h3>
+                <p class="card-desc">流传于山西浮山的传统木偶戏，艺人通过精湛的技艺，让木偶活灵活现，演绎出精彩故事。</p >
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2026 山西非遗数字展厅 | 传承文化，创新表达</p >
+    </footer>
+</body>
+</html>

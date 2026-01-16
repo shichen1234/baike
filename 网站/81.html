@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>晋剧 · 三晋梨园魂</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        operaRed: '#C8102E',
+                        operaGold: '#D4AF37',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hover-scale { transition: transform 0.3s ease; }
+        .hover-scale:hover { transform: scale(1.05); }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- 导航 -->
+    <nav class="bg-operaRed/95 text-white fixed w-full z-10">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold flex items-center"><i class="fa fa-music mr-2"></i>山西晋剧</h1>
+            <div class="flex space-x-4 text-sm">
+                <a href=" " class="hover:text-operaGold">简介</a >
+                <a href="#plays" class="hover:text-operaGold">经典剧目</a >
+                <a href="#roles" class="hover:text-operaGold">行当</a >
+            </div>
+        </div>
+    </nav>
+
+    <!-- 英雄区 -->
+    <header class="pt-20 pb-12 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/1073/1200/600');">
+        <div class="bg-black/50 w-full h-full p-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">晋剧</h2>
+            <p class="text-white/90 max-w-md mx-auto">国家级非遗 · 梆子腔代表 · 三晋大地梨园绝唱</p >
+        </div>
+    </header>
+
+    <!-- 核心内容 -->
+    <main class="container mx-auto px-4 py-8">
+        <!-- 晋剧简介 -->
+        <section id="intro" class="mb-10">
+            <h3 class="text-2xl font-bold text-operaRed mb-4 text-center">晋剧简介</h3>
+            <p class="text-gray-700 text-center max-w-2xl mx-auto">
+                晋剧，原名中路梆子，流行于晋陕蒙冀等地，距今三百余年。唱腔激昂慷慨，表演生动传神，2006年列入第一批国家级非物质文化遗产名录。
+            </p >
+        </section>
+
+        <!-- 经典剧目 -->
+        <section id="plays" class="mb-10">
+            <h3 class="text-2xl font-bold text-operaRed mb-4 text-center">经典剧目</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-white rounded-lg overflow-hidden shadow hover-scale">
+                    <img src="images/rrdajinzhi.jpg" alt="打金枝" class="w-full h-40 object-cover">
+                    <div class="p-3 text-center">
+                        <h4 class="font-bold text-operaRed">《打金枝》</h4>
+                        <p class="text-xs text-gray-600">郭子仪之子与升平公主的故事</p >
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow hover-scale">
+                    <img src="images/rrsuanliang.jpg" alt="算粮登殿" class="w-full h-40 object-cover">
+                    <div class="p-3 text-center">
+                        <h4 class="font-bold text-operaRed">《算粮登殿》</h4>
+                        <p class="text-xs text-gray-600">王宝钏苦守寒窑十八年</p >
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg overflow-hidden shadow hover-scale">
+                    <img src="images/rrxiahe.jpg" alt="下河东" class="w-full h-40 object-cover">
+                    <div class="p-3 text-center">
+                        <h4 class="font-bold text-operaRed">《下河东》</h4>
+                        <p class="text-xs text-gray-600">宋太祖赵匡胤的悲壮故事</p >
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行当角色 -->
+        <section id="roles">
+            <h3 class="text-2xl font-bold text-operaRed mb-4 text-center">生旦净丑</h3>
+            <div class="grid grid-cols-4 gap-2 max-w-xl mx-auto">
+                <div class="text-center p-2 hover-scale bg-white rounded shadow">
+                    <i class="fa fa-user text-operaRed text-2xl mb-1"></i>
+                    <p class="text-xs font-bold">生行</p >
+                </div>
+                <div class="text-center p-2 hover-scale bg-white rounded shadow">
+                    <i class="fa fa-female text-operaGold text-2xl mb-1"></i>
+                    <p class="text-xs font-bold">旦行</p >
+                </div>
+                <div class="text-center p-2 hover-scale bg-white rounded shadow">
+                    <i class="fa fa-male text-gray-800 text-2xl mb-1"></i>
+                    <p class="text-xs font-bold">净行</p >
+                </div>
+                <div class="text-center p-2 hover-scale bg-white rounded shadow">
+                    <i class="fa fa-smile-o text-operaRed text-2xl mb-1"></i>
+                    <p class="text-xs font-bold">丑行</p >
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-operaRed text-white text-center py-3 mt-8">
+        <p class="text-sm">© 2026 晋剧文化传承 | 国家级非物质文化遗产</p >
+    </footer>
+
+    <script>
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector(anchor.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
